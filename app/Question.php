@@ -23,4 +23,20 @@ class Question extends Model
         $this->attributes['title'] = $value;
         $this->attributes['slug']  = str_slug($value);  // Copies value to lower-case and replaces spaces with hyphens.
     }
+
+    /**
+     * Attribute accessor for $question->url required in the view:
+     */
+    public function getUrlAttribute()
+    {
+        return route('questions.show', $this->id);
+    }
+
+    /**
+     * Accessor for $question->created_date:
+     */
+    public function getCreatedDateAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
 }
