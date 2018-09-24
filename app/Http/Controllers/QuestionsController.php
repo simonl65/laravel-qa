@@ -14,8 +14,14 @@ class QuestionsController extends Controller
      */
     public function index()
     {
+        \DB::enableQueryLog();                                      // See note
         $questions = Question::latest()->paginate(5);
-        return view('questions.index', compact('questions'));
+        // return view('questions.index', compact('questions'));
+        view('questions.index', compact('questions'))->render();    // See note
+        dd( \DB::getQueryLog() );                                   // See note
+
+        // NOTE: This is the manual way to view a database query. Better to use
+        //       laravel-debugbar ;-)
     }
 
     /**
