@@ -6,17 +6,17 @@
             <div class="card mb-1">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h2>Show Question</h2>
+                        <h2>{{ $question->title }}</h2>
 
                         <div class="ml-auto">
+                            <a href="{{ route('questions.index') }}" class="btn btn-outline-primary">Back</a>
                             <a href="{{ route('questions.create') }}" class="btn btn-outline-secondary">Ask Question</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="card-body">
-                    <h2>{{ $question->title }}</h2>
-                    {!! nl2br(e($question->body)) !!}
+                    {!! clean(nl2br($question->body)) !!}
                 </div>
             </div>
         </div>
