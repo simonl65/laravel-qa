@@ -20,12 +20,13 @@
                         <div class="form-group">
                             <label for="title">Question title</label>
                             <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" name="title" id="title" aria-describedby="helptitle" placeholder="Your question here">
-                            <small id="helptitle" class="form-text text-muted">Keep it short!</small>
 
                             @if ( $errors->has('title') )
                                 <div class="invalid-feedback">
                                     <strong>{{ $errors->first('title') }}</strong>
                                 </div>
+                            @else
+                                <small id="helptitle" class="form-text text-muted">Keep it short!</small>
                             @endif
                         </div>
 
