@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-outline-primary">Ask the question</button>
+                            <button type="submit" class="btn btn-outline-success btn-lg">Ask the question</button>
                         </div>
                     </form>
                 </div>{{-- card-body --}}
