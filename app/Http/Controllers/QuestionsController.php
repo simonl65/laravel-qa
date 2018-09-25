@@ -40,7 +40,11 @@ class QuestionsController extends Controller
      */
     public function store(AskQuestionRequest $request)
     {
-        dd('Data is valid, now store it');
+        // Get current user via questions relationship:
+        $request->user()->questions()->create( $request->only('title', 'body') );
+        //                  ^ adds user_id
+
+        return redirect()->route('questions.index')->with('success', "Your question has been submitted.");
     }
 
     /**
