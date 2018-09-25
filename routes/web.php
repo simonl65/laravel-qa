@@ -19,4 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('questions', 'QuestionsController');
+// Let a resource handle all routes except 'show':
+Route::resource('questions', 'QuestionsController')->except('show');
+
+// Show question details using the slug - instead of the (default) question id:
+Route::get('/questiosns/{slug}', 'QuestionsController@show')->name('questions.show');
