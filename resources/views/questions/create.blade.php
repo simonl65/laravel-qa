@@ -22,7 +22,7 @@
                             <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" name="title" id="title" aria-describedby="helptitle" placeholder="Your question here">
                             <small id="helptitle" class="form-text text-muted">Keep it short!</small>
 
-                            @if ( $errors->hss('title') )
+                            @if ( $errors->has('title') )
                                 <div class="invalid-feedback">
                                     <strong>{{ $errors->first('title') }}</strong>
                                 </div>
@@ -33,7 +33,7 @@
                             <label for="body">Your question</label>
                             <textarea class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" name="body" id="body" rows="10"></textarea>
 
-                            @if ( $errors->hss('body') )
+                            @if ( $errors->has('body') )
                                 <div class="invalid-feedback">
                                     <strong>{{ $errors->first('body') }}</strong>
                                 </div>
