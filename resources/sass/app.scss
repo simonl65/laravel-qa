@@ -13,10 +13,16 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.media {
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 0.5rem;
+}
 .counters {
-    margin-right: 30px;
+    margin-right: 1rem;
+    padding: 0.5rem;
     font-size: 10px;
     text-align: center;
+    background: rgba(0, 0, 0, 0.04);
 
     strong {
         display: block;
@@ -29,6 +35,8 @@
     }
 
     .status {
+        border-radius: 0.5rem;
+
         &.unanswered {
             border: none;
         }
@@ -38,9 +46,13 @@
             color: $color-green;
         }
 
-        &.asnwered-accepted {
+        &.answered-accepted {
             background: $color-green;
             color: $color-white;
         }
+    }
+
+    .view {
+        margin-top: 0.75rem;
     }
 }

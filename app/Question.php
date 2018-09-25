@@ -39,4 +39,20 @@ class Question extends Model
     {
         return $this->created_at->diffForHumans();
     }
+
+    /**
+     * Accessor for $question->status:
+     *
+     * Returns a class name relevant to the answered status of the question.
+     */
+    public function getStatusAttribute()
+    {
+        if ($this->answers > 0) {
+            if($this->best_answer_id) {
+                return 'answered-accepted';
+            }
+            return 'answered';
+        }
+        return 'unanswered';
+    }
 }

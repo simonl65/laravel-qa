@@ -10477,10 +10477,17 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.media {
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+}
+
 .counters {
-  margin-right: 30px;
+  margin-right: 1rem;
+  padding: 0.5rem;
   font-size: 10px;
   text-align: center;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .counters strong {
@@ -10494,6 +10501,10 @@ a.text-dark:focus {
   height: 60px;
 }
 
+.counters .status {
+  border-radius: 0.5rem;
+}
+
 .counters .status.unanswered {
   border: none;
 }
@@ -10503,8 +10514,12 @@ a.text-dark:focus {
   color: #5fbb78;
 }
 
-.counters .status.asnwered-accepted {
+.counters .status.answered-accepted {
   background: #5fbb78;
   color: #fff;
+}
+
+.counters .view {
+  margin-top: 0.75rem;
 }
 

@@ -8,12 +8,12 @@
 
                 <div class="card-body">
                     @foreach ($questions as $question)
-                    <div class="media">
+                    <div class="media mb-2">
                         <div class="d-flex flex-column counters">
                             <div class="vote">
                                 <strong>{{ $question->votes }}</strong> {{ str_plural('vote', $question->votes) }}
                             </div>
-                            <div class="answer">
+                            <div class="status {{ $question->status }}">
                                 <strong>{{ $question->answers }}</strong> {{ str_plural('answer', $question->answers) }}
                             </div>
                             <div class="view">
