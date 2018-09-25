@@ -16,6 +16,7 @@
 
                 <div class="card-body">
                     <form action="{{ route('questions.store') }}" method="post" class="form">
+                        @csrf
                         <div class="form-group">
                             <label for="title">Question title</label>
                             <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" name="title" id="title" aria-describedby="helptitle" placeholder="Your question here">
