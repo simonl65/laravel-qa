@@ -32,12 +32,19 @@
                             <div class="d-flex align-items-center">
                                 <h3 class="mt-0"><a href="{{ $question->url }}">{{ $question->title }}</a></h3>
                                 <div class="ml-auto">
-                                    <a href="{{ route('questions.edit', $question->id) }}" class="btn btn-sm btn-outline-info mr-1">Edit</a>
-                                    <form action="{{ route('questions.destroy', $question->id) }}" method="post" class="form-delete">
-                                        @method('delete')
-                                        @csrf
-                                    <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete question with title:\n{{ $question->title }}');">Delete</button>
-                                    </form>
+
+                                    @if (Auth::user()->can('update-question', $question))
+                                        <a href="{{ route('questions.edit', $question->id) }}" class="btn btn-sm btn-outline-info mr-1">Edit</a>
+                                    @endif
+
+                                    @if (Auth::user()->can('delete-question', $question))
+                                        <form action="{{ route('questions.destroy', $question->id) }}" method="post" class="form-delete">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete question with title:\n{{ $question->title }}');">Delete</button>
+                                        </form>
+                                    @endif
+
                                 </div>
                             </div>
                             <p class="lead">
