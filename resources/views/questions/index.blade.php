@@ -41,7 +41,7 @@
                                         <form action="{{ route('questions.destroy', $question->id) }}" method="post" class="form-delete">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete question with title:\n{{ $question->title }}');">Delete</button>
+                                            <button type="submit" class="btn btn-sm btn-outline-danger mr-1" onclick="return confirm('Are you sure you want to delete question with title:\n{{ $question->title }}');">Delete</button>
                                         </form>
                                     @endcan
 
