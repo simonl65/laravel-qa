@@ -93,8 +93,8 @@ class QuestionsController extends Controller
      */
     public function destroy(Question $question)
     {
-        $this->authorize('delete', $question)->with('exception', "Sorry - You can't delete a message that has lready been answered.");
+        $this->authorize('delete', $question);
         $question->delete();
-        return redirect(route('questions.index'))->with('success', "That question has now been deeted.");
+        return redirect(route('questions.index'))->with('success', "That question has now been deleted.");
     }
 }
