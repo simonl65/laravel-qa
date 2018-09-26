@@ -25,6 +25,16 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Is user authz to edit this question?:
+        \Gate::define('update-question', function($user, $question) {
+            // Match current user with tha of the question:
+            return $user->id == $question->user_id;
+        });
+
+        // Is user authz to delete this quetsion?:
+        \Gate::define('delete-question', function($user, $question) {
+            // Match current user with tha of the question:
+            return $user->id == $question->user_id;
+        });
     }
 }
