@@ -23,4 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('questions', 'QuestionsController')->except('show');
 
 // Show question details using the slug - instead of the (default) question id:
-Route::get('/questiosns/{slug}', 'QuestionsController@show')->name('questions.show');
+Route::get('/questions/{slug}', 'QuestionsController@show')->name('questions.show');
